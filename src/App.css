@@ -14,18 +14,362 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(135deg, #fcb81e 0%, #ffdb4d 100%);
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(252, 184, 30, 0.4);
+  border-radius: 12px;
+  transition: background 0.3s ease;
+  padding: 0 1.5rem;
+}
+.App-header:hover {
+  background: linear-gradient(135deg, #ffdb4d 0%, #fcb81e 100%);
+  box-shadow: 0 6px 15px rgba(252, 184, 30, 0.6);
+}
+.App-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  min-height: 100vh;        /* Hauteur minimale = hauteur de la fenêtre */
+  display: flex;            /* On utilise Flexbox */
+  flex-direction: column;   /* Les enfants (header, main, footer) en colonne */
+}
+main {
+  flex-grow: 1;             /* Prend tout l'espace restant */
+}
+
+/* Style footer */
+footer {
+  background-color: #fcb81e;
+  padding: 2rem;
+  text-align: center;
+}
+.site {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.site-image {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.site-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.site-text {
+  flex: 2;
+}
+
+.site-text h3 {
+  color: #fcb81e;
+  margin: 0;
+}
+
+.site-text p {
+  margin: 0.5rem 0;
+}
+
+.site-text a {
+  color: #000;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .site {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-image {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+  .App-header {
+    min-height: 60vh;
+    padding: 1.5rem 1rem;
+  }
+
+  .App-header h1 {
+    font-size: 2.2rem;
+  }
+}
+.site {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.site-image {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.site-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.site-text {
+  flex: 2;
+}
+
+.site-text h3 {
+  color: #fcb81e;
+  margin: 0;
+}
+
+.site-text p {
+  margin: 0.5rem 0;
+}
+
+.site-text a {
+  color: #000;
+  text-decoration: underline;
+}
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.welcome-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #fcb81e;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.sites-section h2,
+.team-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #fcb81e;
+}
+
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.site-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+}
+
+.site-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.site-content {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.site-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.site-content p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.btn-link {
+  align-self: flex-start;
+  text-decoration: none;
+  background-color: #fcb81e;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #d99900;
+}
+
+.team-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.team-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fcb81e;
+  user-select: none;
+  padding: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  color: #d99900;
+}
+
+.team-member-card {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  max-width: 300px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid #fcb81e;
+}
+
+.team-member-card h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.team-member-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #777;
+}
+@media (max-width: 768px) {
+  .site {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-image {
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+}
+
+/* === Section équipe === */
+.team-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.team-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fcb81e;
+  user-select: none;
+  padding: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  color: #d99900;
+}
+
+.team-member {
+  max-width: 250px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  border: 3px solid #fcb81e;
+}
+
+.team-member h3 {
+  margin: 0.25rem 0 0 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.team-member p {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
 }
 
 @keyframes App-logo-spin {
